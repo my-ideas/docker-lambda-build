@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Update the version number in package.json
+current=$(cat package.json | jq '.version')
+newversion=$(semver -p $(npm dist-tags ls $(cat package.json| python -c "import sys, json; print(json.load(sys.stdin)['name'])" ) | awk  -F: '{print $2}'))
+
+echo "Moving package.json from $current to $newversion"
+
+sed -ibak "s/$current/\"$newversion\"/" package.json

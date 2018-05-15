@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Wrapper script. Download turbodeploy from GitHub
+turbo=/usr/local/bin/_turbodeploy
+curl "https://raw.githubusercontent.com/my-ideas/turbodeploy/master/turbodeploy" -o $turbo; chmod +x $turbo
+$turbo $1 $2 $3
