@@ -10,5 +10,5 @@ COPY semver ./
 COPY turbodeploy ./
 COPY jq ./
 COPY semver_update ./
-
+COPY checkstack ./
 WORKDIR /var/task
