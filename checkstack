@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Wrapper script. Download turbodeploy from GitHub
+checker=/usr/local/bin/_checkstack
+curl "https://raw.githubusercontent.com/my-ideas/turbodeploy/master/checkstack" -o $checker; chmod +x $checker
+$checker $1 $2
