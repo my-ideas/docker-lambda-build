@@ -21,6 +21,6 @@ These tools are included in this image to be used in the build environment, eg i
 # Quick build reference
 
 ```
-docker build -t myideas/lambda-build .
-docker push myideas/lambda-build
+docker login
+./build-container.sh
 ```
