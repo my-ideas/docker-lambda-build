@@ -2,7 +2,14 @@
 
 # Update the version number in package.json
 current=$(cat package.json | jq '.version')
+deployed=$(npm view $(cat package.json| python -c "import sys, json; print(json.load(sys.stdin)['name'])" ) version)
+
 newversion=$(semver -p $(npm view $(cat package.json| python -c "import sys, json; print(json.load(sys.stdin)['name'])" ) version ))
+
+if [ $? -eq 1 ]; then
+    echo "My assumption: the package has never been deployed"
+    newversion=${current}
+fi
 
 echo "Moving package.json from $current to $newversion"
 
