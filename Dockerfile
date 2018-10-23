@@ -10,6 +10,11 @@ RUN echo "//npm.my-ideas.it/repository/my-ideas/:_authToken=\${NPM_TOKEN}" >> ~/
 
 RUN echo "https://github.com/my-ideas/docker-lambda-build/commit/$GITHASH" >> ~/__image_version
 
+# Update aws cli
+RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+RUN unzip awscli-bundle.zip
+RUN  ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
 # Copy scripts
 WORKDIR /usr/local/bin
 COPY semver ./
