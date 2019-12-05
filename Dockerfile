@@ -1,4 +1,4 @@
-FROM lambci/lambda:build-nodejs8.10
+FROM lambci/lambda:build-nodejs12.x
 LABEL maintainer=github.com/totomz
 
 ARG GITHASH
