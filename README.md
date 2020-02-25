@@ -16,6 +16,7 @@ These tools are included in this image to be used in the build environment, eg i
 * turbodeploy to deploy to AWS
 * semver_update can be called before npm publish to automatically increment the fix number of the package semver version  
 * checkstack: Create a ChangeSet for an AWS CloudFormation stack and return the number of differences (see in the repo `my-ideas/turbideploy` )
+* [Terraform](https://www.terraform.io/) binary
 
 
 # Quick build reference

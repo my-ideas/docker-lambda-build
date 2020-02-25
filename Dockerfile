@@ -23,4 +23,10 @@ COPY jq ./
 COPY semver_update ./
 COPY checkstack ./
 
+# Install terraform
+RUN curl https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip --output terraform.zip && \
+    unzip terraform.zip && \
+    chmod +x terraform && \
+    rm terraform.zip
+
 WORKDIR /var/task
