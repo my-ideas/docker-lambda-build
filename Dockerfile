@@ -29,4 +29,7 @@ RUN curl https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linu
     chmod +x terraform && \
     rm terraform.zip
 
+# Install dig fr docker-can tests
+RUN yum install -y bind-utils
+
 WORKDIR /var/task
